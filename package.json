@@ -1,6 +1,6 @@
 {
     "name": "logwise",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A modular logs system based on Winston.",
     "main": "dist/logger.service.js",
     "types": "dist/logger.service.d.ts",
