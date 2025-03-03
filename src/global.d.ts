@@ -10,7 +10,7 @@ declare global {
         warn(message: string): void;
         api(message: string): void;
     }
-    const log: Log;
+    const logwise: Log;
 }
 
-export = globalThis.log;
+export = globalThis.logwise;

@@ -42,14 +42,14 @@ const _envInfo = (): void => {
 █ 🛑 DEBUG and VERBOSE were disabled for secutiry reasons    🛑 █
 █ 🛑 Please, set it into .env so you can use this methods    🛑 █
 █████████████████████████████████████████████████████████████████`
-    environment.toLowerCase() == "unset" ? log.warn(_WARNING_MESSAGE) : null;
+    environment.toLowerCase() == "unset" ? logwise.warn(_WARNING_MESSAGE) : null;
 }
 
 /**
 * Default log for messages. 
 * @param message Log message.
 */
-export class Logger implements Log {
+export class Logger {
     private static instance: winston.Logger;
     private static isProduction = ['production', 'prod'].includes(environment.toLowerCase());
     private static _getDebugLevel(): string {
@@ -77,82 +77,6 @@ export class Logger implements Log {
         };
     }
 
-
-    /**
-     * Default logger for messages, used for general logging.
-     * @param {string} message Log message.
-     */
-    public info(message: string) {
-        log.info(message);
-    }
-
-    /**
-     * Logs API-related events.
-     * @param {string} message Log message.
-     */
-    public api(message: string): void {
-        log.api(message);
-    }
-
-    /**
-     * Logs database-related events and transactions.
-     * @param {string} message Log message.
-     */
-    public db(message: string): void {
-        log.db(message)
-    }
-
-    /**
-     * Logs detailed debugging information.
-     * Not displayed in production and never persisted for security reasons.
-     * @param {any} message Any variable, displaying details such as type and properties.
-     */
-    public debug(message: unknown): void {
-        log.debug(message);
-    }
-
-    public discord(message: string): void {
-        log.discord(message);
-    }
-
-    /**
-     * Logs error messages, accepting any data type.
-     * You can pass a string in the first argument and an object in the second argument if you wish.
-     * The second argument is optional though.
-     * @param {any} message Any type of data related to the error. Also can be a descriptive message, as you can pass an object as the second argument.
-     * @param {any} object Any object or data related to the error.
-     */
-    public error(message: unknown, object?: unknown): void {
-        log.error(message, object);
-    }
-
-    /**
-     * Logs successful events related data. 
-     * Use this for successful generic transactions, operations, etc.
-     * @param {string} message Log message.
-     */
-    public success(message: string): void {
-        log.success(message);
-    }
-
-    /**
-     * Logs highly detailed debugging information. Use with caution!
-     * Intended for in-depth analysis, this method may generate extensive output.
-     * Prefer `debug()` for general debugging needs.
-     * Not displayed in production and never persisted for security reasons.
-     * @param {any} message Any variable, showing details such as type and properties.
-     */
-    public verbose(message: unknown): void {
-        log.verbose(message);
-    }
-
-    /**
-     * Logs warn messages.
-     * @param {string} message Log message.
-     */
-    public warn(message: string): void {
-        log.warn(message);
-    }
 
 
     private static getLogger(): winston.Logger {

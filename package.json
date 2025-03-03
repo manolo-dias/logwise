@@ -1,6 +1,6 @@
 {
-    "name": "fancy-logger",
-    "version": "0.9.9",
+    "name": "logwise",
+    "version": "0.0.1",
     "description": "A modular logs system based on Winston.",
     "main": "dist/logger.service.js",
     "types": "dist/logger.service.d.ts",
@@ -18,7 +18,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/manolo-dias/fancy-logger"
+        "url": "https://github.com/manolo-dias/logwise"
     },
     "keywords": [
         "logger",
