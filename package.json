@@ -1,0 +1,47 @@
+{
+    "name": "fancy-logger",
+    "version": "0.9.9",
+    "description": "A modular logs system based on Winston.",
+    "main": "dist/logger.service.js",
+    "types": "dist/logger.service.d.ts",
+    "type": "module",
+    "scripts": {
+        "build": "tsc",
+        "start": "node dist/logger.service.js",
+        "prepare": "npm run build",
+        "test": "echo \"No tests specified\" && exit 0",
+        "postinstall": "npm run build && node dist/logger-init.js"
+    },
+    "dependencies": {
+        "dotenv": "^16.4.7",
+        "winston": "^3.8.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/manolo-dias/fancy-logger"
+    },
+    "keywords": [
+        "logger",
+        "winston",
+        "logging",
+        "npm-package",
+        "fancy",
+        "log",
+        "fancy-logger",
+        "fancy-log"
+    ],
+    "author": "Manolo Dias",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/node": "^22.13.8",
+        "typescript": "^5.8.2"
+    },
+    "files": [
+        "dist/",
+        "README.md",
+        "LICENSE"
+    ],
+    "engines": {
+        "node": ">=18.0.0"
+    }
+}
